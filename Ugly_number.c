@@ -9,19 +9,18 @@ int ugly(int n)
     {
         return 0;
     }
-    if(n%2==0)
+    else if(n%2==0)
     {
-        return ugly(n/2);
+        return ugly(n=n/2);
     }
-    if(n%3==0)
+    else if(n%3==0)
     {
-        return ugly(n/3);
+        return ugly(n=n/3);
     }
-    if(n%5==0)
+    else if(n%7==0)
     {
-        return ugly(n/5);
+        return ugly(n=n/7);
     }
-    return 0;
 }
 int main()
 {
@@ -35,5 +34,4 @@ int main()
     {
         printf("Not Ugly Number");
     }
-    
 }
