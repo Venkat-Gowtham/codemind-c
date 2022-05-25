@@ -1,0 +1,31 @@
+#include<stdio.h>
+int main()
+{
+    int n,a[10000],i,ma,c=0;
+    scanf("%d",&n);
+    for(i=0;i<n;i++)
+    {
+        scanf("%d",&a[i]);
+    }
+    ma=0;
+    for(i=0;i<n;i++)
+    {
+        if(a[i]==1)
+        {
+            c+=1;
+        }
+        else
+        {
+            if(c>ma)
+            {
+                ma=c;
+            }
+            c=0;
+        }
+    }
+    if(c>ma)
+        {
+            ma=c;
+        }
+    printf("%d",ma);
+}
