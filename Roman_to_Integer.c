@@ -1,6 +1,6 @@
 #include<stdio.h>
 #include<string.h>
-int value(char r)
+int val(char r)
 {
     if (r == 'I')
         return 1;
@@ -19,16 +19,15 @@ int value(char r)
  
     return -1;
 }
-int romanToDecimal(char str[])
+int rtoD(char str[])
 {
     int res=0;
     for (int i = 0; i < strlen(str); i++)
     {
-        int s1 = value(str[i]);
- 
+        int s1 = val(str[i]);
         if (i + 1 < strlen(str))
         {
-            int s2 = value(str[i + 1]);
+            int s2 = val(str[i + 1]);
             if (s1 >= s2)
             {
                 res = res + s1;
@@ -37,6 +36,7 @@ int romanToDecimal(char str[])
             {
                 res = res + s2 - s1;
                 i++;
+               
             }
         }
         else {
@@ -50,6 +50,6 @@ int main()
     char str[100];
     int x;
     fgets(str,sizeof(str),stdin);
-    x=romanToDecimal(str);
+    x=rtoD(str);
     printf("%d",x);
 }
